@@ -2,10 +2,9 @@
   <div class="text-grey/80">
     <HomeHero />
     <HomeAbout />
-    <HomeServices />
-    <HomeEnroll />
-    <HomeEbooks />
     <HomeVideos />
+    <HomeServices />
+    <HomeContact />
   </div>
 </template>
 

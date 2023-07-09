@@ -1,31 +1,30 @@
 <template>
-  <div class="fixed bg-whiter right-0 left-0 font-medium text-black/70 z-10">
+  <header class="fixed bg-white right-0 left-0 font-medium text-black/70 z-10">
     <div class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1240px] mx-auto">
       <nuxt-link to="/">
-        <img class="w-[50px] md:w-20 h-[50px] md:h-20" src="/img/logo.png" />
+        <img class="w-[150px]" src="/img/logo.png" />
+        <!-- <div class="border-2 border-black flex flex-col gap rounded-lg px-[22px] py-[11px]">
+          <span class="leading-tight">TGPC</span>
+          <span class="leading-tight">Media</span>
+        </div> -->
       </nuxt-link>
       <button ref="hamburger" class="lg:hidden" @click="open = !open">
-        <Icon name="ic:round-menu" size="24px" color="#03989E" />
+        <Icon name="ic:round-menu" size="24px" />
       </button>
       <ul class="navbar-links flex items-start" :class="{ 'navbar-links--navopen': open }" v-click-outside="close">
         <button class="lg:hidden absolute right-3" @click="open = !open">
-          <Icon name="ic:round-close" size="24px" color="#03989E" />
+          <Icon name="ic:round-close" size="24px" />
         </button>
-        <ul class="flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-10">
+        <ul class="flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-16">
           <li @click="open = !open"><nuxt-link to="/">Home</nuxt-link></li>
           <li @click="open = !open"><nuxt-link to="/about">About Us</nuxt-link></li>
           <li @click="open = !open"><nuxt-link to="/services">Services</nuxt-link></li>
           <li @click="open = !open"><nuxt-link to="/projects">Projects</nuxt-link></li>
-          <li @click="open = !open"><nuxt-link to="/contact">Contact Us</nuxt-link></li>
-          <li @click="open = !open"><nuxt-link to="/blog">Blog</nuxt-link></li>
-          <div class="flex flex-col lg:flex-row lg:items-center gap-6">
-            <nuxt-link to="/ebooks" class="border-2 border-primary font-semibold px-10 py-3 rounded-lg text-primary">eBooks</nuxt-link>
-            <button class="bg-primary border-2 border-primary font-semibold px-10 py-3 rounded-lg text-white">Training</button>        
-          </div>
+          <nuxt-link to="/ebooks" class="border-black bg-black font-semibold px-[30px] py-5 rounded-lg leading-none text-white">Let's Talk</nuxt-link>
         </ul>
       </ul>
     </div>
-  </div>
+  </header>
 </template>
 
 <script setup lang="ts">
@@ -40,6 +39,9 @@ const close = (e:HTMLInputElement) => {
 </script>
 
 <style lang="scss" scoped>
+header {
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.10);
+}
 .navbar {
 
   &-links {
