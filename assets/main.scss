@@ -1,9 +1,13 @@
+*, html {
+  scroll-behavior: smooth !important;
+}
 body {
   font-family: Inter, sans-serif;
+  scroll-behavior: smooth;
 }
-.router-link-exact-active {
-  font-weight: 700;
-}
+// .router-link-active {
+//   font-weight: 700;
+// }
 h1, h2, h3, h4, h5, h6 {
   font-family: Sora, sans-serif;
 }

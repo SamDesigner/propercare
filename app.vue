@@ -14,7 +14,7 @@
 // })
 </script>
 <template>
-  <div class="body text-black dark:text-white">
+  <div class="body text-black dark:text-white ">
     <AppHeader />
     <main>
       <NuxtPage />

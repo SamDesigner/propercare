@@ -23,7 +23,7 @@ const services = ref([
 ]);
 </script>
 <template>
-  <div class="mt-16 mb-8 px-4 lg:px-0 lg:my-[80px] mx-auto w-full max-w-[1240px]">
+  <div class="mt-16 mb-8 px-4 lg:px-0 lg:my-[80px] mx-auto w-full max-w-[1240px] ">
     <div class="h-px bg-black dark:bg-white" />
     <div
       class="flex flex-col md:flex-row justify-between items-start mt-6 lg:mt-16 w-full"
@@ -47,6 +47,7 @@ const services = ref([
         <p class="ml-2">{{ service.title }}</p>
       </div>
     </div>
+    <div id="contact" />
   </div>
 </template>
 

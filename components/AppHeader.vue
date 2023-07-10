@@ -17,10 +17,10 @@
         </button>
         <ul class="flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-16">
           <li @click="open = !open"><nuxt-link to="/">Home</nuxt-link></li>
-          <li @click="open = !open"><nuxt-link to="/about">About Us</nuxt-link></li>
-          <li @click="open = !open"><nuxt-link to="/services">Services</nuxt-link></li>
-          <li @click="open = !open"><nuxt-link to="/projects">Projects</nuxt-link></li>
-          <nuxt-link to="/ebooks" class="border-black bg-black font-semibold px-[30px] py-5 rounded-lg leading-none text-white">Let's Talk</nuxt-link>
+          <li @click="open = !open"><nuxt-link to="/#about">About Us</nuxt-link></li>
+          <li @click="open = !open"><nuxt-link to="#services">Services</nuxt-link></li>
+          <li @click="open = !open"><nuxt-link to="#projects">Projects</nuxt-link></li>
+          <li @click="open = !open" class=" mt-6 lg:mt-0"><nuxt-link to="#contact" class="border-black bg-black font-semibold px-[30px] py-5 rounded-lg leading-none text-white">Let's Talk</nuxt-link></li>
         </ul>
       </ul>
     </div>
