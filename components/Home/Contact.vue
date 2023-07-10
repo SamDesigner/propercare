@@ -17,7 +17,7 @@
         <p>
           "Ready to unlock your Health and Social Care company's potential? Contact TGPCmedia today for a free consultation. Our team of experts is eager to understand your goals, discuss tailored strategies, and empower your brand for transformative growth.
         </p>
-        <p class="font-bold">+447943370799</p>
+        <p class="font-bold">(+44) 0333 772 2724</p>
         <p class="font-bold">connectwithus@tgpcmedia.com</p>
       </div>
     </div>
