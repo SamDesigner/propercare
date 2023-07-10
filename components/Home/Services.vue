@@ -29,7 +29,7 @@ const services = ref([
       class="flex flex-col md:flex-row justify-between items-start mt-6 lg:mt-16 w-full"
     >
       <div class="w-full max-w-[542px]">
-        <h2 class="font-bold leading-snug text-2xl md:text-3xl lg:text-4xl text-black">
+        <h2 class="font-bold leading-snug text-2xl md:text-3xl lg:text-4xl text-black dark:text-white">
           Our Services
         </h2>
       </div>
@@ -42,7 +42,7 @@ const services = ref([
       </div>
     </div>
     <div class="flex flex-wrap mt-7 lg:mt-14 gap-5 lg:gap-[47px]">
-      <div v-for="(service, index) in services" :key="index" class="border-2 border-black rounded-lg w-full md:w-auto flex items-center p-5">
+      <div v-for="(service, index) in services" :key="index" class="border-2 border-black dark:border-white bg-white rounded-lg w-full md:w-auto flex items-center p-5">
         <img class="w-7" :src="`/img/${service.img}.png`" :alt="service.img">
         <p class="ml-2">{{ service.title }}</p>
       </div>

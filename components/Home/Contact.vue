@@ -7,7 +7,7 @@
       class="flex flex-col md:flex-row justify-between px-4 md:px-0 items-start mt-12 lg:mt-16 w-full"
     >
       <div class="w-full max-w-[542px]">
-        <h2 class="font-bold leading-snug text-2xl md:text-3xl lg:text-4xl text-black">
+        <h2 class="font-bold leading-snug text-2xl md:text-3xl lg:text-4xl text-black dark:text-white">
           Contact Us
         </h2>
       </div>

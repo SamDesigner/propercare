@@ -1,26 +1,67 @@
 <template>
-  <header class="fixed bg-white right-0 left-0 font-medium text-black/70 z-10">
-    <div class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1240px] mx-auto">
+  <header
+    class="fixed bg-white dark:bg-black right-0 left-0 font-medium text-black/70 dark:text-white/70 z-10"
+  >
+    <div
+      class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1240px] mx-auto"
+    >
       <nuxt-link to="/">
-        <img class="w-[150px]" src="/img/logo.png" />
-        <!-- <div class="border-2 border-black flex flex-col gap rounded-lg px-[22px] py-[11px]">
-          <span class="leading-tight">TGPC</span>
-          <span class="leading-tight">Media</span>
-        </div> -->
+        <!-- <img class="w-[150px]" src="/img/logo.png" /> -->
+        <div
+          class="bg-logo dark:bg-logo-footer bg-contain bg-no-repeat w-[150px] h-[45px]"
+        />
       </nuxt-link>
-      <button ref="hamburger" class="lg:hidden" @click="open = !open">
-        <Icon name="ic:round-menu" size="24px" />
-      </button>
-      <ul class="navbar-links flex items-start" :class="{ 'navbar-links--navopen': open }" v-click-outside="close">
+      <div class="flex items-center gap-4">
+        <button
+            ref="themeToggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 flex lg:hidden items-center justify-center rounded-lg text-sm p-2.5 w-10"
+            @click="toggleMode"
+          > 
+            <Icon name="material-symbols:clear-day-rounded" size="24px" class="block dark:hidden" ref="toggleDark" v-if="darkMode" />
+            <Icon name="bi:moon-fill" size="20px" class="hidden dark:block" ref="toggleLight" v-if="lightMode" />
+          </button>
+          <button ref="hamburger" class="lg:hidden" @click="open = !open">
+            <Icon name="ic:round-menu" size="24px" />
+          </button>
+      </div>
+      <ul
+        class="navbar-links flex items-start"
+        :class="{ 'navbar-links--navopen': open }"
+        v-click-outside="close"
+      >
         <button class="lg:hidden absolute right-3" @click="open = !open">
           <Icon name="ic:round-close" size="24px" />
         </button>
-        <ul class="flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-16">
+        <ul
+          class="flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-16"
+        >
           <li @click="open = !open"><nuxt-link to="/">Home</nuxt-link></li>
-          <li @click="open = !open"><nuxt-link to="/#about">About Us</nuxt-link></li>
-          <li @click="open = !open"><nuxt-link to="#services">Services</nuxt-link></li>
-          <li @click="open = !open"><nuxt-link to="#projects">Projects</nuxt-link></li>
-          <li @click="open = !open" class=" mt-6 lg:mt-0"><nuxt-link to="#contact" class="border-black bg-black font-semibold px-[30px] py-5 rounded-lg leading-none text-white">Let's Talk</nuxt-link></li>
+          <li @click="open = !open">
+            <nuxt-link to="/#about">About Us</nuxt-link>
+          </li>
+          <li @click="open = !open">
+            <nuxt-link to="#services">Services</nuxt-link>
+          </li>
+          <li @click="open = !open">
+            <nuxt-link to="#projects">Projects</nuxt-link>
+          </li>
+          <li @click="open = !open" class="mt-6 lg:mt-0">
+            <nuxt-link
+              to="#contact"
+              class="border-black dark:border-white bg-black dark:bg-white font-semibold px-[30px] py-5 rounded-lg leading-none text-white dark:text-black"
+              >Let's Talk</nuxt-link
+            >
+          </li>
+          <button
+            ref="themeToggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 hidden lg:flex items-center justify-center rounded-lg text-sm p-2.5 w-10"
+            @click="toggleMode"
+          > 
+            <Icon name="material-symbols:clear-day-rounded" size="24px" class="block dark:hidden" ref="toggleDark" v-if="darkMode" />
+            <Icon name="bi:moon-fill" size="20px" class="hidden dark:block" ref="toggleLight" v-if="lightMode" />
+          </button>
         </ul>
       </ul>
     </div>
@@ -28,22 +69,53 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-
+import { ref } from "vue";
+const lightMode = ref(false);
+const darkMode = ref(false);
 const open = ref(false);
-const close = (e:HTMLInputElement) => {
-  if (e.target.tagName !== 'svg' && e.target.tagName !== 'path') {
+const close = (e: HTMLInputElement) => {
+  if (e.target.tagName !== "svg" && e.target.tagName !== "path") {
     open.value = false;
+  }
+};
+const toggleDark = ref(null);
+const toggleLight = ref(null);
+
+if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+  darkMode.value = true;
+} else {
+  lightMode.value = true;
+}
+
+const toggleMode = () => {
+  lightMode.value = !lightMode.value;
+  darkMode.value = !darkMode.value;
+
+  if (localStorage.getItem('color-theme')) {
+    if (localStorage.getItem('color-theme') === 'light') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('color-theme', 'light');
+    }
+  } else {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('color-theme', 'light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('color-theme', 'dark');
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
 header {
-  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.10);
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
 }
 .navbar {
-
   &-links {
     display: flex;
     // align-items: center;
@@ -51,7 +123,7 @@ header {
 
     &__item {
       margin: 0;
-      a:not([data-type=button]) {
+      a:not([data-type="button"]) {
         color: $primary;
         text-decoration: none;
         &:hover {
@@ -88,7 +160,7 @@ header {
       transform: translateX(500px);
       // pointer-events: none;
       position: fixed;
-      transition: transform .2s ease-out;
+      transition: transform 0.2s ease-out;
       display: flex;
       flex-direction: column;
       padding-top: 20px;
@@ -99,7 +171,7 @@ header {
       right: 0;
       width: 500px;
       max-width: 100vw;
-      background-color: #FFF;
+      background-color: #fff;
       z-index: 100;
       &__toggle {
         display: none;
