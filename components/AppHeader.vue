@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed bg-primary dark:bg-white right-0 left-0 font-medium text-white/70 dark:text-primary/70 z-20"
+    class="fixed bg-primary right-0 left-0 font-medium text-white/70 z-20"
   >
     <div
       class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1240px] mx-auto"
@@ -151,7 +151,7 @@ header {
       right: 0;
       width: 500px;
       max-width: 100vw;
-      background-color: #fff;
+      background-color: $primary;
       z-index: 100;
       &__toggle {
         display: none;
