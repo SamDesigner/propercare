@@ -1,5 +1,5 @@
 export default defineAppConfig({
-  title: 'OC Management Consultants',
+  title: 'TGPC NG',
   theme: {
     dark: true,
     colors: {

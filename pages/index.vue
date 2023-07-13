@@ -1,10 +1,10 @@
 <template>
   <div class="text-black/80 ">
     <HomeHero />
-    <HomeAbout />
-    <HomeVideos />
+    <HomeMission />
     <HomeServices />
-    <HomeContact />
+    <HomeTestimonials />
+    <HomeBlog />
   </div>
 </template>
 

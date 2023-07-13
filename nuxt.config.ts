@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     }
   },
   css: ['~/assets/main.scss'],
-  modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@nuxtjs/google-fonts', 'nuxt-swiper'],
+  modules: ['@nuxtjs/tailwindcss', 'nuxt-icon', '@nuxtjs/google-fonts'],
   vite: {
     css: {
       preprocessorOptions: {

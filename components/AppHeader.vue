@@ -1,30 +1,16 @@
 <template>
   <header
-    class="fixed bg-white dark:bg-black right-0 left-0 font-medium text-black/70 dark:text-white/70 z-10"
+    class="fixed bg-primary dark:bg-white right-0 left-0 font-medium text-white/70 dark:text-primary/70 z-20"
   >
     <div
       class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1240px] mx-auto"
     >
       <nuxt-link to="/">
-        <!-- <img class="w-[150px]" src="/img/logo.png" /> -->
-        <div
-          class="bg-logo dark:bg-logo-footer bg-contain bg-no-repeat w-[150px] h-[45px]"
-        />
+        <img class="w-[85px] md:w-[139px]" src="/svg/logo.svg" />
       </nuxt-link>
-      <div class="flex items-center gap-4">
-        <button
-            ref="themeToggle"
-            type="button"
-            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 flex lg:hidden items-center justify-center rounded-lg text-sm p-2.5 w-10"
-            @click="toggleMode"
-          > 
-            <Icon name="material-symbols:clear-day-rounded" size="24px" class="block dark:hidden" ref="toggleDark" v-if="darkMode" />
-            <Icon name="bi:moon-fill" size="20px" class="hidden dark:block" ref="toggleLight" v-if="lightMode" />
-          </button>
-          <button ref="hamburger" class="lg:hidden" @click="open = !open">
-            <Icon name="ic:round-menu" size="24px" />
-          </button>
-      </div>
+      <button ref="hamburger" class="lg:hidden" @click="open = !open">
+        <Icon name="ic:round-menu" size="24px" />
+      </button>
       <ul
         class="navbar-links flex items-start"
         :class="{ 'navbar-links--navopen': open }"
@@ -34,7 +20,7 @@
           <Icon name="ic:round-close" size="24px" />
         </button>
         <ul
-          class="flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-16"
+          class="flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-8"
         >
           <li @click="open = !open"><nuxt-link to="/">Home</nuxt-link></li>
           <li @click="open = !open">
@@ -44,24 +30,18 @@
             <nuxt-link to="#services">Services</nuxt-link>
           </li>
           <li @click="open = !open">
-            <nuxt-link to="#projects">Projects</nuxt-link>
+            <nuxt-link to="#projects">Industries Served</nuxt-link>
+          </li>
+          <li @click="open = !open">
+            <nuxt-link to="#projects">Blog</nuxt-link>
           </li>
           <li @click="open = !open" class="mt-6 lg:mt-0">
             <nuxt-link
               to="#contact"
-              class="border-black dark:border-white bg-black dark:bg-white font-semibold px-[30px] py-5 rounded-lg leading-none text-white dark:text-black"
-              >Let's Talk</nuxt-link
+              class="border-black dark:border-white dark:bg-primary bg-white font-semibold p-5 rounded-2xl leading-none dark:text-white text-black"
+              >Contact Us</nuxt-link
             >
           </li>
-          <button
-            ref="themeToggle"
-            type="button"
-            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 hidden lg:flex items-center justify-center rounded-lg text-sm p-2.5 w-10"
-            @click="toggleMode"
-          > 
-            <Icon name="material-symbols:clear-day-rounded" size="24px" class="block dark:hidden" ref="toggleDark" v-if="darkMode" />
-            <Icon name="bi:moon-fill" size="20px" class="hidden dark:block" ref="toggleLight" v-if="lightMode" />
-          </button>
         </ul>
       </ul>
     </div>

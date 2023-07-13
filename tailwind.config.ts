@@ -7,11 +7,11 @@ export default <Partial<Config>>{
     extend: {
       colors: {
         // black: '#000',
-        // primary: '#03989E',
+        primary: '#434343',
         // white: '#FFF',
         // whiter: '#FFFFFF',
         // 'light-green': '#CDEAEC',
-        // grey: '#1A2323',
+        grey: '#F2F2F2',
         // green: '#003D40',
         // 'grey-2': '#CCCECE',
         // 'grey-3': '#666C6C',
