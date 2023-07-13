@@ -24,6 +24,9 @@ const swiperOptions = reactive({
   breakpoints: {
     200: {
       slidesPerView: 1
+    },
+    1050: {
+      slidesPerView: 2
     }
   }
 })

@@ -67,13 +67,13 @@
           class="absolute w-[206px] h-[206px] bg-black dark:bg-white rounded-lg top-0 left-0 z-0"
         />
       </div>
-      <div class="w-full max-w-[612px]">
+      <div class="w-full md:ml-4 max-w-[612px]">
         <h1
           class="font-bold leading-snug lg:leading-tight text-3xl lg:text-5xl text-black dark:text-white"
         >
           Improving Lives, One Audit at a Time
         </h1>
-        <div class="mt-3 md:mt-0 max-w-[509px] pl-3 md:pl-4 pt-3 md:pt-4 relative">
+        <div class="md:hidden mt-3 md:mt-0 max-w-[509px] pl-3 md:pl-4 pt-3 md:pt-4 relative">
           <img
             class="w-full max-w-[491px] relative z-10"
             src="/img/hero2-img.png"
