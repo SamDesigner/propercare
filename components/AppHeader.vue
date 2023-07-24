@@ -29,9 +29,9 @@
           <li @click="open = !open">
             <nuxt-link to="#services">Services</nuxt-link>
           </li>
-          <li @click="open = !open">
+          <!-- <li @click="open = !open">
             <nuxt-link to="#projects">Industries Served</nuxt-link>
-          </li>
+          </li> -->
           <li @click="open = !open">
             <nuxt-link to="#projects">Blog</nuxt-link>
           </li>
