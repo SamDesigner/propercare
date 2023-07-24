@@ -4,7 +4,7 @@
     <div class="flex flex-col items-center mx-auto w-full max-w-[1240px]">
       <h3 class="text-white dark:text-primary text-center md:text-left text-2xl lg:text-3xl mb-6 font-bold">Driving Excellence,<br class="md:hidden"> Enriching Lives</h3>
       <div
-        class="flex flex-col md:flex-row px-4 lg:px-0 gap-5 md:gap-[82px] justify-between lg:items-center"
+        class="flex flex-col md:flex-row px-4 lg:px-0 gap-5 md:gap-[82px] justify-between lg:items-stretch"
       >
         <div class="bg-white dark:bg-primary w-full px-4 md:px-[62px] py-[29px] md:py-12 flex flex-col items-center text-center max-w-[579px] rounded-[25px] relative">
           <h3

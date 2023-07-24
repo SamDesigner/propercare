@@ -1,23 +1,23 @@
 <script setup lang="ts">
 const services = ref([
   {
-    name: "Client's Name",
-    title: "Position",
+    name: "Crystallize Care Services",
+    title: "`",
     image: "impact1",
     desc: "Working with The Good Practice Company NG has been a game-changer for our organization. Their quality assurance audits have helped us identify areas for improvement and implement strategies that have elevated our services. The expertise and professionalism of their team are truly impressive. Highly recommended!",
   },
-  {
-    name: "Client's Name",
-    title: "Position",
-    image: "impact2",
-    desc: "Working with The Good Practice Company NG has been a game-changer for our organization. Their quality assurance audits have helped us identify areas for improvement and implement strategies that have elevated our services. The expertise and professionalism of their team are truly impressive. Highly recommended!",
-  },
-  {
-    name: "Client's Name",
-    title: "Position",
-    image: "impact1",
-    desc: "Working with The Good Practice Company NG has been a game-changer for our organization. Their quality assurance audits have helped us identify areas for improvement and implement strategies that have elevated our services. The expertise and professionalism of their team are truly impressive. Highly recommended!",
-  },
+  // {
+  //   name: "Client's Name",
+  //   title: "Position",
+  //   image: "impact2",
+  //   desc: "Working with The Good Practice Company NG has been a game-changer for our organization. Their quality assurance audits have helped us identify areas for improvement and implement strategies that have elevated our services. The expertise and professionalism of their team are truly impressive. Highly recommended!",
+  // },
+  // {
+  //   name: "Client's Name",
+  //   title: "Position",
+  //   image: "impact1",
+  //   desc: "Working with The Good Practice Company NG has been a game-changer for our organization. Their quality assurance audits have helped us identify areas for improvement and implement strategies that have elevated our services. The expertise and professionalism of their team are truly impressive. Highly recommended!",
+  // },
 ]);
 
 const swiperOptions = reactive({
@@ -26,7 +26,7 @@ const swiperOptions = reactive({
       slidesPerView: 1
     },
     1050: {
-      slidesPerView: 2
+      slidesPerView: 1
     }
   }
 })
@@ -45,18 +45,20 @@ const swiperOptions = reactive({
       </div>
     </div>
     <swiper-container
-      slides-per-view="2"
+      slides-per-view="1"
       space-between="10"
+      centered-slides="true"
       loop="true"
       css-mode="true"
       navigation="true"
-      class="w-full"
+      class=""
       :breakpoints="swiperOptions.breakpoints"
     >
       <swiper-slide
         v-for="(service, idx) in services"
         :key="idx"
         :style="'font-size: 16px'"
+        class="w-[auto!important]"
       >
         <div
           class="bg-primary/5 flex flex-col justify-center relative rounded-2xl px-6 pb-11 pt-48 md:pt-32 w-full md:w-[520px] h-auto md:h-[440px]"

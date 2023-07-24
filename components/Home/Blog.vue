@@ -1,28 +1,31 @@
 <script setup lang="ts">
 const services = ref([
   {
-    title: "Blog Post Title",
+    title: "The Positive Externalities of Developing Social Care in Africa",
     image: "blog1",
-    desc: "Brief glimpse of the blog lorem ipsum dolor sit amet consectetur. Nisl tellus ornare nec nunc... ",
+    desc: "Social care encompasses a wide range of services, including healthcare, education, and social protection. These services are essential... ",
     author: "Admin",
-    date: "April 14, 2023",
-    duration: "4 min",
+    date: "July 24, 2023",
+    duration: "2 min",
+    to: "/blog/first"
   },
   {
-    title: "Blog Post Title",
+    title: "The Growing Importance of Enhancing Social Care in Nigeria",
     image: "blog2",
-    desc: "Brief glimpse of the blog lorem ipsum dolor sit amet consectetur. Nisl tellus ornare nec nunc... ",
+    desc: "Nigeria is Africa's most populous country, with over 200 million people. Despite its natural resources and diverse economy...",
     author: "Admin",
-    date: "April 14, 2023",
+    date: "July 24, 2023",
     duration: "4 min",
+    to: "/blog/second"
   },
   {
-    title: "Blog Post Title",
+    title: "How Small Businesses Can Maximize Digital Footprints in an Increasingly Connected World",
     image: "blog3",
-    desc: "Brief glimpse of the blog lorem ipsum dolor sit amet consectetur. Nisl tellus ornare nec nunc... ",
+    desc: "As the world becomes more and more interconnected, businesses are increasingly... ",
     author: "Admin",
-    date: "April 14, 2023",
-    duration: "4 min",
+    date: "July 24, 2023",
+    duration: "3 min",
+    to: "/blog/third"
   },
 ]);
 </script>
@@ -48,12 +51,12 @@ const services = ref([
         </p>
       </div>
     </div>
-    <div class="flex flex-wrap gap-[24px] mt-8">
+    <div class="flex items-stretch flex-wrap gap-[24px] mt-8">
       <div
         v-for="(service, idx) in services"
         :key="idx"
         :style="'font-size: 16px'"
-        class="flex flex-col justify-center rounded-b-2xl w-full md:w-[397px]"
+        class="flex flex-col justify-center items-stretch rounded-b-2xl w-full md:w-[397px]"
       >
         <img class="" :src="`/img/${service.image}.png`" alt="impact image" />
         <div class="bg-primary px-4 py-6 rounded-b-2xl">
@@ -76,7 +79,7 @@ const services = ref([
           <p class="text-white/70 leading-7">
             {{ service.desc }}
           </p>
-          <nuxt-link class="text-white text-lg font-semibold">Read more...</nuxt-link>
+          <nuxt-link :to="service.to" class="text-white text-lg font-semibold">Read more...</nuxt-link>
         </div>
       </div>
     </div>
