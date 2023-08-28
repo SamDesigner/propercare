@@ -2,36 +2,39 @@
 const services = ref([
   {
     title: "The Positive Externalities of Developing Social Care in Africa",
-    image: "blog1",
+    image: "first-blog-img",
     desc: "Social care encompasses a wide range of services, including healthcare, education, and social protection. These services are essential... ",
     author: "Admin",
-    date: "July 24, 2023",
+    date: "07/24/2023",
     duration: "2 min",
-    to: "/blog/first"
+    to: "/blog/first",
   },
   {
     title: "The Growing Importance of Enhancing Social Care in Nigeria",
-    image: "blog2",
+    image: "second-blog-img",
     desc: "Nigeria is Africa's most populous country, with over 200 million people. Despite its natural resources and diverse economy...",
     author: "Admin",
-    date: "July 24, 2023",
+    date: "07/24/2023",
     duration: "4 min",
-    to: "/blog/second"
+    to: "/blog/second",
   },
   {
-    title: "How Small Businesses Can Maximize Digital Footprints in an Increasingly Connected World",
-    image: "blog3",
+    title:
+      "How Small Businesses Can Maximize Digital Footprints in an Increasingly Connected World",
+    image: "third-blog-img",
     desc: "As the world becomes more and more interconnected, businesses are increasingly... ",
     author: "Admin",
-    date: "July 24, 2023",
+    date: "07/24/2023",
     duration: "3 min",
-    to: "/blog/third"
+    to: "/blog/third",
   },
 ]);
 </script>
 <template>
-  <div class="flex flex-col mb-40 lg:mb-[200px] px-4 lg:px-0 mx-auto w-full max-w-[1240px]">
-    <div
+  <div
+    class="flex flex-col mb-40 lg:mb-[120px] px-4 lg:px-0 mx-auto w-full max-w-[1240px]"
+  >
+    <!-- <div
       class="flex flex-col md:flex-row justify-between items-start mt-6 lg:mt-16 w-full"
     >
       <div class="w-full max-w-[542px]">
@@ -41,45 +44,50 @@ const services = ref([
           Featured Blog Post
         </h2>
       </div>
-      <div
-        class="mt-3 text-lg text-black/70 dark:text-white/70 md:mt-0 max-w-[645px]"
-      >
+      <div class="mt-3 text-lg text-black/70 dark:md:mt-0 max-w-[645px]">
         <p>
           Dive into our articles, written by industry experts, and join the
           conversation to broaden your knowledge and make an impact in your
           field.
         </p>
       </div>
-    </div>
-    <div class="flex items-stretch flex-wrap gap-[24px] mt-8">
+    </div> -->
+    <div class="flex items-stretch flex-wrap gap-[24px]">
       <div
         v-for="(service, idx) in services"
         :key="idx"
         :style="'font-size: 16px'"
-        class="flex flex-col justify-center items-stretch rounded-b-2xl w-full md:w-[397px]"
+        class="flex flex-col justify-center items-stretch w-full md:w-[397px]"
       >
-        <img class="" :src="`/img/${service.image}.png`" alt="impact image" />
-        <div class="bg-primary px-4 py-6 rounded-b-2xl">
-          <h5 class="text-xl font-semibold text-white">
+        <img
+          class="rounded-t-2xl"
+          :src="`/img/${service.image}.png`"
+          alt="impact image"
+        />
+        <div class="py-4 flex flex-col items-start">
+          <h6 class="bg-white text-sm mb-4 px-4 py-3">
+            {{ service.duration }} read
+          </h6>
+
+          <h5 class="text-xl font-semibold leading-[36px] ellipsis-text">
             {{ service.title }}
           </h5>
-          <div class="flex mt-1 gap-2 items-center">
-            <h6 class="font-semibold text-sm text-white">
-              By {{ service.author }}
-            </h6>
-            <div class="h-[18px] w-px bg-white/20" />
-            <h6 class="font-semibold text-sm text-white">
-              {{ service.date }}
-            </h6>
-            <div class="h-[18px] w-px bg-white/20" />
-            <h6 class="font-semibold text-sm text-white">
-              {{ service.duration }} read
-            </h6>
-          </div>
-          <p class="text-white/70 leading-7">
+          <p class="leading-7 mb-[37px] ellipsis-text">
             {{ service.desc }}
           </p>
-          <nuxt-link :to="service.to" class="text-white text-lg font-semibold">Read more...</nuxt-link>
+          <div class="flex justify-between items-center w-full">
+            <nuxt-link
+              :to="service.to"
+              class="text-sm text-black tracking-[0.028px]"
+              >Read more <Icon name="mdi:arrow-right" size="20" class="ml-1"
+            /></nuxt-link>
+            <div class="flex text-sm gap-2 items-center">
+              <p>By {{ service.author }}</p>
+              <p>
+                {{ service.date }}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -116,5 +124,14 @@ const services = ref([
   width: 60px !important;
   height: 60px !important;
   border-radius: 50% !important;
+}
+
+.ellipsis-text {
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 2;
+align-self: stretch;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="text-black/80 ">
+  <div class="">
     <HomeHero />
     <HomeMission />
     <HomeServices />

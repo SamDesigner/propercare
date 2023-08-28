@@ -1,18 +1,39 @@
 <template>
-  <header
-    class="fixed bg-primary right-0 left-0 font-medium text-white/70 z-20"
-  >
+  <header class="fixed bg-grey right-0 left-0 text-black z-20">
     <div
       class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1240px] mx-auto"
     >
       <nuxt-link to="/">
-        <img class="w-[85px] md:w-[139px]" src="/svg/logo.svg" />
+        <img class="w-[85px] md:w-[115px]" src="/svg/logo-dark.svg" />
       </nuxt-link>
+      <ul
+        class="hidden lg:flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-8"
+      >
+        <li @click="open = !open"><nuxt-link to="/">Home</nuxt-link></li>
+        <li @click="open = !open">
+          <nuxt-link to="/#about">About Us</nuxt-link>
+        </li>
+        <li @click="open = !open">
+          <nuxt-link to="/#services">Services</nuxt-link>
+        </li>
+        <!-- <li @click="open = !open">
+            <nuxt-link to="#projects">Industries Served</nuxt-link>
+          </li> -->
+        <li @click="open = !open">
+          <nuxt-link to="#">Blog</nuxt-link>
+        </li>
+      </ul>
       <button ref="hamburger" class="lg:hidden" @click="open = !open">
         <Icon name="ic:round-menu" size="24px" />
       </button>
+      <div @click="open = !open" class="mt-6 hidden lg:block lg:mt-0">
+        <nuxt-link to="#contact" class="py-4 px-8 leading-none text-black"
+          >Work with Us
+          <Icon name="mdi:arrow-right" color="#0A0A0A" size="20" class="ml-1 mb-0.5" />
+        </nuxt-link>
+      </div>
       <ul
-        class="navbar-links flex items-start"
+        class="navbar-links flex lg:hidden items-start"
         :class="{ 'navbar-links--navopen': open }"
         v-click-outside="close"
       >
@@ -20,27 +41,33 @@
           <Icon name="ic:round-close" size="24px" />
         </button>
         <ul
-          class="flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-8"
+          class="flex lg:hidden flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-8"
         >
           <li @click="open = !open"><nuxt-link to="/">Home</nuxt-link></li>
           <li @click="open = !open">
             <nuxt-link to="/#about">About Us</nuxt-link>
           </li>
           <li @click="open = !open">
-            <nuxt-link to="#services">Services</nuxt-link>
+            <nuxt-link to="/#services">Services</nuxt-link>
           </li>
           <!-- <li @click="open = !open">
             <nuxt-link to="#projects">Industries Served</nuxt-link>
           </li> -->
           <li @click="open = !open">
-            <nuxt-link to="#projects">Blog</nuxt-link>
+            <nuxt-link to="#">Blog</nuxt-link>
           </li>
           <li @click="open = !open" class="mt-6 lg:mt-0">
             <nuxt-link
               to="#contact"
-              class="border-black dark:border-white dark:bg-primary bg-white font-semibold p-5 rounded-2xl leading-none dark:text-white text-black"
-              >Contact Us</nuxt-link
-            >
+              class="py-4 px-8 rounded-2xl leading-none text-black"
+              >Work with Us
+              <Icon
+                name="mdi:arrow-right"
+                color="#0A0A0A"
+                size="20"
+                class="ml-2 mb-0.5"
+              />
+            </nuxt-link>
           </li>
         </ul>
       </ul>
@@ -61,7 +88,11 @@ const close = (e: HTMLInputElement) => {
 const toggleDark = ref(null);
 const toggleLight = ref(null);
 
-if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+if (
+  localStorage.getItem("color-theme") === "dark" ||
+  (!("color-theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
   darkMode.value = true;
 } else {
   lightMode.value = true;
@@ -71,21 +102,21 @@ const toggleMode = () => {
   lightMode.value = !lightMode.value;
   darkMode.value = !darkMode.value;
 
-  if (localStorage.getItem('color-theme')) {
-    if (localStorage.getItem('color-theme') === 'light') {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('color-theme', 'dark');
+  if (localStorage.getItem("color-theme")) {
+    if (localStorage.getItem("color-theme") === "light") {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
     } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('color-theme', 'light');
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
     }
   } else {
-    if (document.documentElement.classList.contains('dark')) {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('color-theme', 'light');
+    if (document.documentElement.classList.contains("dark")) {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-theme", "light");
     } else {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('color-theme', 'dark');
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-theme", "dark");
     }
   }
 };
@@ -134,6 +165,10 @@ header {
     }
     &__about {
       width: 260px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      display: none;
     }
 
     @media screen and (max-width: 1023px) {

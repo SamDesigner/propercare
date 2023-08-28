@@ -33,18 +33,9 @@ const swiperOptions = reactive({
 </script>
 <template>
   <div
-    class="flex flex-col mb-10 lg:mb-[100px] mt-20 lg:mt-0 mx-auto px-4 lg:px-0 w-full max-w-[1240px]"
+    class="flex flex-col items-center mb-10 lg:mb-[100px] mt-20 lg:mt-[120px] mx-auto px-4 lg:px-0 w-full max-w-[1240px]"
   >
-    <div class="flex lg:items-center justify-between w-full">
-      <div class="">
-        <h2
-          class="font-semibold leading-snug text-2xl md:text-3xl text-primary mb-3"
-        >
-          Testimonials: A Glimpse Into Our Impact
-        </h2>
-      </div>
-    </div>
-    <swiper-container
+    <!-- <swiper-container
       slides-per-view="1"
       space-between="10"
       centered-slides="true"
@@ -59,26 +50,27 @@ const swiperOptions = reactive({
         :key="idx"
         :style="'font-size: 16px'"
         class="w-[auto!important]"
-      >
+      > -->
         <div
-          class="bg-primary/5 flex flex-col justify-center relative rounded-2xl px-6 pb-11 pt-48 md:pt-32 w-full md:w-[520px] h-auto md:h-[440px]"
+          class="flex flex-col justify-center items-center text-center relative rounded-2xl md:px-6 pb-11 md:pt-32 w-full md:w-[854px]"
         >
-          <span class="text-black/20 text-[160px] leading-3">“</span>
-          <img class="absolute right-0 top-0 w-[194px]" :src="`/svg/${service.image}.svg`" alt="impact image">
-          <p class="text-black/70 max-w-[390px] -mt-3 leading-7 mb-6">{{ service.desc }}</p>
+          <img class="w-[135px]" src="/img/crystallize-logo.png" alt="impact image">
+          <p class="md:text-2xl text-black font-semibold leading-[32px] md:leading-[40px] my-6">“Working with The Good Practice Company NG has been a game-changer for our organization. Their quality assurance audits have helped us identify areas for improvement and implement strategies that have elevated our services. The expertise and professionalism of their team are truly impressive. Highly recommended!”</p>
           <div class="flex items-center gap-3">
-            <div class="flex flex-col">
-              <h6 class="text-xl font-semibold text-black">
-                {{ service.name }}
+            <div class="flex flex-col items-center">
+
+            <img class="w-12" src="/img/pfp-place.png" alt="impact image">
+              <h6 class="mt-4 font-semibold">
+                Gwen Stacy
               </h6>
-              <p class="mt-1 text-black/70">
-                {{ service.title }}
+              <p class="mt-1">
+                Senior Consultant
               </p>
             </div>
           </div>
         </div>
-        </swiper-slide>
-    </swiper-container>
+        <!-- </swiper-slide>
+    </swiper-container> -->
   </div>
 </template>
 
