@@ -35,7 +35,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  css: ["~/assets/main.scss"],
+  css: ["~/assets/main.scss", "~/assets/fonts/fonts.css"],
   modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "@nuxtjs/google-fonts"],
   vite: {
     css: {

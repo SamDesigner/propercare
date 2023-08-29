@@ -8,32 +8,43 @@ const mm = $gsap.matchMedia();
 const offsets = ref([262, 234, 234, 262, 234, 262, 262, 262]);
 const spacer = ref(40);
 
+const ctx = $gsap.context(() => {});
+onUnmounted(() => {
+  ctx.revert();
+});
 onMounted(() => {
-  mm.add("(min-width: 1024px)", () => {
-    const cards = document.querySelectorAll(".card");
-    $gsap.utils.toArray(cards).forEach((card, index) => {
+  setTimeout(() => {
+    console.log('mounted');
+    $ScrollTrigger.refresh();
+  }, 1000);
+  ctx.add(() => {
+    mm.add("(min-width: 1024px)", () => {
+      const cards = document.querySelectorAll(".card");
+      $gsap.utils.toArray(cards).forEach((card, index) => {
+        $ScrollTrigger.create({
+          trigger: card,
+          start: `top top+=40%`,
+          endTrigger: container.value,
+          end: `bottom 40%+=262`,
+          pin: true,
+          pinSpacing: false,
+          // markers: true,
+          id: "pin",
+          scale: () => 1 - (cards.length - index) * 0.025,
+          invalidateOnRefresh: true,
+        });
+      });
+
       $ScrollTrigger.create({
-        trigger: card,
-        start: `top top+=40%`,
-        endTrigger: container.value,
-        end: `bottom 40%+=262`,
+        trigger: pinnedElement.value,
+        start: "top top+=40%",
+        end: (self) => self.previous().end,
         pin: true,
-        pinSpacing: false,
-        // markers: true,
-        id: "pin",
-        scale: () => 1 - (cards.length - index) * 0.025,
-        invalidateOnRefresh: true,
+        // markers: true
       });
     });
-
-    $ScrollTrigger.create({
-      trigger: pinnedElement.value,
-      start: 'top top+=40%',
-      end: (self) => self.previous().end,
-      pin: true,
-      // markers: true
-    })
   });
+  
 });
 </script>
 <template>
@@ -61,7 +72,11 @@ onMounted(() => {
             communities across Nigeria.
           </p>
         </div>
-        <img class="mt-20 md:mt-[145px]" src="/svg/mission-bg.svg" alt="mission line" />
+        <img
+          class="mt-20 md:mt-[145px]"
+          src="/svg/mission-bg.svg"
+          alt="mission line"
+        />
       </div>
       <div class="flex flex-col mt-20 gap-y-10 lg:mt-0">
         <div
