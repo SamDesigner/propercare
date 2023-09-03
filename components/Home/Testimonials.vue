@@ -23,17 +23,17 @@ const services = ref([
 const swiperOptions = reactive({
   breakpoints: {
     200: {
-      slidesPerView: 1
+      slidesPerView: 1,
     },
     1050: {
-      slidesPerView: 1
-    }
-  }
-})
+      slidesPerView: 1,
+    },
+  },
+});
 </script>
 <template>
   <div
-    class="flex flex-col items-center mb-10 lg:mb-[100px] mt-20 lg:mt-[120px] mx-auto px-4 lg:px-0 w-full max-w-[1240px]"
+    class="flex flex-col items-center mb-10 lg:mb-[100px] mt-20 lg:mt-[120px] mx-auto px-4 lg:px-0 w-full max-w-[1280px]"
   >
     <!-- <swiper-container
       slides-per-view="1"
@@ -51,25 +51,32 @@ const swiperOptions = reactive({
         :style="'font-size: 16px'"
         class="w-[auto!important]"
       > -->
-        <div
-          class="flex flex-col justify-center items-center text-center relative rounded-2xl md:px-6 pb-11 md:pt-32 w-full md:w-[854px]"
-        >
-          <img class="w-[135px]" src="/img/crystallize-logo.png" alt="impact image">
-          <p class="md:text-2xl text-black font-semibold leading-[32px] md:leading-[40px] my-6">“Working with The Good Practice Company NG has been a game-changer for our organization. Their quality assurance audits have helped us identify areas for improvement and implement strategies that have elevated our services. The expertise and professionalism of their team are truly impressive. Highly recommended!”</p>
-          <div class="flex items-center gap-3">
-            <div class="flex flex-col items-center">
-
-            <img class="w-12" src="/img/pfp-place.png" alt="impact image">
-              <h6 class="mt-4 font-semibold">
-                Gwen Stacy
-              </h6>
-              <p class="mt-1">
-                Senior Consultant
-              </p>
-            </div>
-          </div>
+    <div
+      class="flex flex-col justify-center items-center text-center relative rounded-2xl md:px-6 pb-11 md:pt-32 w-full md:w-[854px]"
+    >
+      <img
+        class="w-[135px]"
+        src="/img/crystallize-logo.png"
+        alt="impact image"
+      />
+      <p
+        class="md:text-2xl text-black font-semibold leading-[32px] md:leading-[40px] my-6"
+      >
+        “Working with The Good Practice Company NG has been a game-changer for
+        our organization. Their quality assurance audits have helped us identify
+        areas for improvement and implement strategies that have elevated our
+        services. The expertise and professionalism of their team are truly
+        impressive. Highly recommended!”
+      </p>
+      <div class="flex items-center gap-3">
+        <div class="flex flex-col items-center">
+          <img class="w-12" src="/img/pfp-place.png" alt="impact image" />
+          <h6 class="mt-4 font-semibold">Gwen Stacy</h6>
+          <p class="mt-1">Senior Consultant</p>
         </div>
-        <!-- </swiper-slide>
+      </div>
+    </div>
+    <!-- </swiper-slide>
     </swiper-container> -->
   </div>
 </template>

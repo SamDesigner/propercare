@@ -32,7 +32,7 @@ const services = ref([
 </script>
 <template>
   <div
-    class="flex flex-col mb-40 lg:mb-[120px] px-4 lg:px-0 mx-auto w-full max-w-[1240px]"
+    class="flex flex-col mb-40 lg:mb-[120px] px-4 lg:px-0 mx-auto w-full max-w-[1280px]"
   >
     <!-- <div
       class="flex flex-col md:flex-row justify-between items-start mt-6 lg:mt-16 w-full"
@@ -128,10 +128,10 @@ const services = ref([
 
 .ellipsis-text {
   display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 2;
-align-self: stretch;
-overflow: hidden;
-text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  align-self: stretch;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

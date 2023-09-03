@@ -1,15 +1,23 @@
 <template>
-  <header class="fixed bg-grey right-0 left-0 text-black z-20">
+  <header
+    class="fixed right-0 left-0 text-black z-20"
+    :class="scrolled ? 'bg-light-pink header-shadow' : 'bg-transparent'"
+  >
     <div
-      class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1240px] mx-auto"
+      class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1280px] mx-auto"
     >
       <nuxt-link to="/">
-        <img class="w-[85px] md:w-[115px]" src="/svg/logo-dark.svg" />
+        <img class="w-[85px] md:w-[127px]" src="/img/logo.png" />
       </nuxt-link>
       <ul
-        class="hidden lg:flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-8"
+        class="hidden lg:flex flex-col lg:flex-row lg:items-center gap-4 mt-10 lg:mt-0 lg:gap-12"
       >
-        <li @click="open = !open"><nuxt-link to="/">Home</nuxt-link></li>
+        <li
+          :class="route.name === 'index' ? 'text-pink font-semibold' : ''"
+          @click="open = !open"
+        >
+          <nuxt-link to="/">Home</nuxt-link>
+        </li>
         <li @click="open = !open">
           <nuxt-link to="/#about">About Us</nuxt-link>
         </li>
@@ -18,18 +26,25 @@
         </li>
         <!-- <li @click="open = !open">
             <nuxt-link to="#projects">Industries Served</nuxt-link>
-          </li> -->
+          </li>
         <li @click="open = !open">
           <nuxt-link to="#">Blog</nuxt-link>
-        </li>
+        </li> -->
       </ul>
       <button ref="hamburger" class="lg:hidden" @click="open = !open">
         <Icon name="ic:round-menu" size="24px" />
       </button>
       <div @click="open = !open" class="mt-6 hidden lg:block lg:mt-0">
-        <nuxt-link to="#contact" class="py-4 px-8 leading-none text-black"
-          >Work with Us
-          <Icon name="mdi:arrow-right" color="#0A0A0A" size="20" class="ml-1 mb-0.5" />
+        <nuxt-link
+          to="#contact"
+          class="py-4 px-8 bg-pink rounded-lg leading-none text-white"
+          >Get in touch
+          <Icon
+            name="mdi:arrow-down"
+            color="#FFF"
+            size="20"
+            class="ml-1 mb-0.5"
+          />
         </nuxt-link>
       </div>
       <ul
@@ -52,20 +67,20 @@
           </li>
           <!-- <li @click="open = !open">
             <nuxt-link to="#projects">Industries Served</nuxt-link>
-          </li> -->
+          </li>
           <li @click="open = !open">
             <nuxt-link to="#">Blog</nuxt-link>
-          </li>
+          </li> -->
           <li @click="open = !open" class="mt-6 lg:mt-0">
             <nuxt-link
               to="#contact"
-              class="py-4 px-8 rounded-2xl leading-none text-black"
-              >Work with Us
+              class="py-4 px-8 bg-pink rounded-lg leading-none text-white"
+              >Get in touch
               <Icon
-                name="mdi:arrow-right"
-                color="#0A0A0A"
+                name="mdi:arrow-down"
+                color="#FFF"
                 size="20"
-                class="ml-2 mb-0.5"
+                class="ml-1 mb-0.5"
               />
             </nuxt-link>
           </li>
@@ -76,54 +91,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-const lightMode = ref(false);
-const darkMode = ref(false);
+const route = useRoute();
+
+const scrolled = ref(false);
 const open = ref(false);
 const close = (e: HTMLInputElement) => {
   if (e.target.tagName !== "svg" && e.target.tagName !== "path") {
     open.value = false;
   }
 };
-const toggleDark = ref(null);
-const toggleLight = ref(null);
 
-if (
-  localStorage.getItem("color-theme") === "dark" ||
-  (!("color-theme" in localStorage) &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches)
-) {
-  darkMode.value = true;
-} else {
-  lightMode.value = true;
-}
-
-const toggleMode = () => {
-  lightMode.value = !lightMode.value;
-  darkMode.value = !darkMode.value;
-
-  if (localStorage.getItem("color-theme")) {
-    if (localStorage.getItem("color-theme") === "light") {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("color-theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-theme", "light");
-    }
-  } else {
-    if (document.documentElement.classList.contains("dark")) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-theme", "light");
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("color-theme", "dark");
-    }
-  }
+const handleScroll = () => {
+  scrolled.value = window.scrollY > 0;
 };
+
+if (typeof window !== "undefined") {
+  window.addEventListener("scroll", handleScroll);
+}
 </script>
 
 <style lang="scss" scoped>
-header {
+.header-shadow {
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1);
 }
 .navbar {
@@ -186,7 +174,7 @@ header {
       right: 0;
       width: 500px;
       max-width: 100vw;
-      background-color: $primary;
+      background-color: $light-pink;
       z-index: 100;
       &__toggle {
         display: none;

@@ -1,10 +1,11 @@
 <template>
   <div class="">
     <HomeHero />
-    <HomeMission />
     <HomeServices />
-    <HomeTestimonials />
-    <HomeBlog />
+    <HomeAbout />
+    <HomeSupport />
+    <HomeHelp />
+    <HomeContact />
   </div>
 </template>
 

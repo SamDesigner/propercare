@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 <template>
   <div
-    class="mt-[140px] lg:mt-[200px] pb-40 mx-auto w-full max-w-[1240px] flex flex-col items-center"
+    class="mt-[140px] lg:mt-[200px] pb-40 mx-auto w-full max-w-[1280px] flex flex-col items-center"
   >
     <div
       class="flex flex-col px-4 lg:px-0 justify-center items-center w-full max-w-[800px]"
