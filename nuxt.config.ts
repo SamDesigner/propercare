@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: "The Good Practice Company Media",
+      title: "Proper4UCare",
       link: [
         { rel: "icon", type: "image/png", href: "/favicon.ico" },
         {
@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "We understand the unique needs of health and social providers, and we're committed to creating user-centric experiences that leave a lasting impact.",
+            "We are the best care givers, and winners of the 2020 caregiving visionary awards",
         },
       ],
       // script: [
