@@ -1,14 +1,16 @@
 <script setup lang="ts"></script>
 <template>
   <div class="bg-light-pink">
-    <div class="py-10 lg:py-20 mx-auto w-full max-w-[1280px]">
+    <div class="py-10 lg:py-20 mx-auto w-full max-w-[1320px]">
       <div
         class="flex flex-col px-4 lg:px-0 justify-between lg:flex-row lg:items-center"
       >
         <div class="mt-3 md:mt-0 w-full max-w-[566px] relative">
           <img class="w-full" src="/img/care.png" alt="hero image" />
         </div>
-        <div class="w-full text-secondary max-w-[632px] mt-10 lg:mt-0 flex flex-col">
+        <div
+          class="w-full text-secondary max-w-[632px] mt-10 lg:mt-0 flex flex-col"
+        >
           <h2
             class="font-semibold leading-snug lg:leading-[56px] lg:text-[40px] text-[24px]"
           >

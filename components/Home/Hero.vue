@@ -1,41 +1,62 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const open = ref(false);
+</script>
 <template>
   <div class="bg-light-pink relative">
-    <img class="absolute hidden lg:block top-0 left-0 w-[564px]" src="/img/ellipse.png" alt="ellipse">
-    <div class="pt-[140px] pb-10 lg:pt-[200px] mx-auto w-full max-w-[1280px]">
-      <div
-        class="flex flex-col px-4 lg:px-0 justify-between lg:flex-row lg:items-center"
-      >
-        <div class="w-full text-secondary max-w-[610px] lg:pt-24 flex flex-col">
-          <h1
-            class="font-semibold leading-snug lg:leading-[80px] text-[40px] lg:text-[64px]"
+    <!-- <img class="absolute hidden lg:block top-0 left-0 w-[564px]" src="/img/ellipse.png" alt="ellipse"> -->
+    <div class="pt-4 pb-16 mt-6 mx-auto w-full max-w-[1320px]">
+      <div class="flex flex-col px-4 md:px-0 justify-between lg:flex-row">
+        <div class="w-full text-primary max-w-[632px] md:px-4 xl:px-0 flex flex-col">
+          <div
+            class="w-full border border-pink-2 p-3 md:max-w-[432px] rounded-2xl backdrop-blur-[28px] bg-white"
           >
-            Live In Care, Your Family Will Love
-          </h1>
-          <p class="leading-7 mt-4 w-full max-w-[419px]">
-            110+ professional caregivers for you and for your love one from the
-            best.
-          </p>
-          <div class="flex mt-10 w-full md:w-auto">
-            <nuxt-link
-              to="#contact"
-              class="py-4 px-8 bg-pink rounded-lg leading-none text-white"
-              >Get in touch
-              <Icon
-                name="mdi:arrow-down"
-                color="#FFF"
-                size="20"
-                class="ml-1 mb-0.5"
-              />
-            </nuxt-link>
+            <div class="flex justify-between">
+              <nuxt-link to="/">
+                <img class="w-[110px]" src="/svg/logo.svg" alt="logo" />
+              </nuxt-link>
+              <button ref="hamburger" @click="open = !open">
+                <Icon name="ic:round-menu" size="24px" color="#E15E99" />
+              </button>
+            </div>
+            <div v-if="open" class="border-t border-pink-2 mt-3 pt-3 flex justify-between">
+              <nuxt-link to="/" class="text-pink-3">HOME</nuxt-link>
+              <nuxt-link to="/" class="text-pink-3">ABOUT</nuxt-link>
+              <nuxt-link to="/" class="text-pink-3">SERVICES</nuxt-link>
+              <nuxt-link to="/" class="text-pink-3">CONTACT</nuxt-link>
+            </div>
           </div>
-          <div class="flex flex-col gap-2 mt-10">
+          <div class="flex justify-self-center flex-col mt-10 md:mt-20 w-full">
+            <h1
+              class="font-medium leading-snug capitalize lg:leading-[72px] text-[40px] lg:text-[56px]"
+            >
+              Providing
+              <span class="text-secondary font-semibold">Exceptional Care</span>
+              in the comfort of your home
+            </h1>
+            <p class="leading-7 mt-4 w-full max-w-[614px]">
+              At Proper Care, our team of dedicated professionals are committed
+              to providing exceptional care that meets your unique needs. With
+              our personalized approach, you can trust that you or your loved
+              one will receive he attention and support necessary to maintain
+              independence and enhance overall well-being.
+            </p>
+            <div class="flex mt-10 w-full md:w-auto">
+              <nuxt-link
+                to="#contact"
+                class="py-4 px-8 bg-secondary rounded-lg leading-none text-white w-full md:w-auto text-center"
+                >Get in touch
+              </nuxt-link>
+            </div>
+          </div>
+          <!-- <div class="flex flex-col gap-2 mt-10">
             <img class="w-[130px]" src="/img/avatar.png" alt="avatar" />
             <p class="font-semibold leading-[32px]">Our Clients Love Us</p>
             <img class="w-[152px]" src="/img/stars.png" alt="avatar" />
-          </div>
+          </div> -->
         </div>
-        <div class="mt-3 md:mt-0 w-full max-w-[566px] relative">
+        <div
+          class="mt-10 lg:mt-0 w-full max-w-[624px] rounded-2xl py-8 md:py-20 px-8 md:px-14 bg-white border border-pink-2 relative"
+        >
           <img class="w-full" src="/img/hero-img.png" alt="hero image" />
         </div>
       </div>

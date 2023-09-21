@@ -14,8 +14,8 @@
 // })
 </script>
 <template>
-  <div class="body bg-grey text-primary">
-    <AppHeader />
+  <div class="body bg-white text-primary">
+    <!-- <AppHeader /> -->
     <main>
       <NuxtPage />
     </main>

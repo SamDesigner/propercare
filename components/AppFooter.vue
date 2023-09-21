@@ -1,41 +1,27 @@
 <template>
   <footer
     id="footer"
-    class="bg-green text-grey-3 min-h-[369px] py-10 flex flex-col justify-between px-4"
+    class="bg-green text-grey-3 min-h-[369px] pt-16 pb-10 flex flex-col justify-between px-4"
   >
-    <div class="w-full max-w-[1240px] mx-auto">
+    <div class="w-full max-w-[1280px] mx-auto">
       <div
-        class="flex flex-col-reverse md:flex-row items-center justify-center w-full"
+        class="flex flex-col md:flex-row items-center justify-center w-full"
       >
-        <div class="flex flex-col items-center mt-10">
+        <div class="flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-0 justify-between w-full">
           <nuxt-link to="/">
-            <img class="w-[127px]" src="/img/logo.png" />
+            <img class="w-[127px]" src="/svg/logo.svg" />
           </nuxt-link>
           <div
-            class="text-sm w-full flex flex-col md:flex-row gap-10 max-w-full md:max-w-[333px] mt-10 text-center md:text-left"
+            class="flex text-2xl flex-col gap-10 text-center md:text-left"
           >
             <nuxt-link to="/">Home</nuxt-link>
             <nuxt-link to="/about">About Us</nuxt-link>
             <nuxt-link class="min-w-max" to="/service">Services</nuxt-link>
-            <!-- <nuxt-link class="min-w-max" to="/job">Find Jobs</nuxt-link> -->
+            <nuxt-link class="min-w-max" to="/job">Contact</nuxt-link>
           </div>
-          <!-- <div class="mt-6 flex justify-center md:justify-start gap-3">
-            <a href="#" target="_blank"
-              ><Icon name="ic:round-facebook" size="24px" color="#FFFFFF"
-            /></a>
-            <a href="#" target="_blank"
-              ><Icon name="mdi:linkedin" size="24px" color="#FFFFFF"
-            /></a>
-            <a href="#" target="_blank"
-              ><Icon name="mdi:twitter-box" size="24px" color="#FFFFFF"
-            /></a>
-            <a href="#" target="_blank"
-              ><Icon name="ri:instagram-fill" size="24px" color="#FFFFFF"
-            /></a>
-          </div> -->
         </div>
       </div>
-      <div class="border-t border-white mt-10 text-sm pt-10">
+      <div class="border-t border-grey-5 mt-10 flex flex-col md:flex-row justify-between text-sm pt-10">
         <p class="text-center leading-snug mb-4">
           Designed by TGPC Media
         </p>

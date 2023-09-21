@@ -4,7 +4,7 @@
     :class="scrolled ? 'bg-light-pink header-shadow' : 'bg-transparent'"
   >
     <div
-      class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1280px] mx-auto"
+      class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1320px] mx-auto"
     >
       <nuxt-link to="/">
         <img class="w-[85px] md:w-[127px]" src="/img/logo.png" />

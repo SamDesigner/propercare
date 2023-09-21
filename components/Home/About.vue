@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="my-10 lg:my-20 px-4 md:px-0 mx-auto w-full max-w-[1280px]">
+  <div class="my-10 lg:my-20 px-4 md:px-0 mx-auto w-full max-w-[1320px]">
     <div
       class="bg-green rounded-2xl flex flex-col lg:flex-row justify-between items-center py-10 lg:py-0 pl-10 pr-16 w-full"
     >

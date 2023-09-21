@@ -1,65 +1,62 @@
 <script setup lang="ts"></script>
 <template>
   <div
-    class="my-[40px] lg:mt-[120px] lg:mb-[200px] px-4 md:px-0 mx-auto w-full max-w-[1280px]"
+    class="py-[40px] lg:py-[120px] px-4 md:px-0 mx-auto w-full max-w-[1320px]"
   >
     <div
-      class="flex flex-col justify-between items-center mt-10 lg:mt-16 w-full"
+      class="flex flex-col justify-between items-center w-full"
     >
-      <div class="w-full">
-        <h2
-          class="font-semibold text-center leading-snug text-3xl lg:text-4xl text-secondary"
+      <div class="gap-6 flex flex-wrap justify-center">
+        <div
+          class="bg-light-pink border border-pink-2 rounded-2xl px-6 py-10 flex flex-col items-start gap-10 w-full md:max-w-[384px]"
         >
-          Live in care, your family will love
-        </h2>
+          <img class="w-16" src="/img/chat.png" alt="chat" />
+          <div class="flex flex-col gap-2">
+            <h3 class="font-medium text-[22px]">Personal Care & Hygiene</h3>
+            <p class="leading-[30px]">
+              Our team of experienced caregivers provide personalized care plans
+              tailored to each individual's needs.
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-light-pink border border-pink-2 rounded-2xl px-6 py-10 flex flex-col items-start gap-10 w-full md:max-w-[384px]"
+        >
+          <img class="w-16" src="/img/message.png" alt="chat" />
+          <div class="flex flex-col gap-2">
+            <h3 class="font-medium text-[22px]">
+              Reliable Service and 24/7 Support
+            </h3>
+            <p class="leading-[30px]">
+              We pride ourselves on providing reliable service and
+              round-the-clock support for our clients.
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-light-pink border border-pink-2 rounded-2xl px-6 py-10 flex flex-col items-start gap-10 w-full md:max-w-[384px]"
+        >
+          <img class="w-16" src="/img/send.png" alt="chat" />
+          <div class="flex flex-col gap-2">
+            <h3 class="font-medium text-[22px]">
+              Manage your team with reports
+            </h3>
+            <p class="leading-[30px]">
+              We offer flexible scheduling options and affordable rates to
+              ensure our services meet your needs and budget.
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="gap-6 flex flex-wrap justify-center mt-12">
-        <div
-          class="bg-grey p-6 rounded-lg flex flex-col items-start gap-10 w-full max-w-[410px]"
-        >
-          <div class="bg-primary p-2 rounded">
-            <img src="/svg/chat.svg" alt="chat" />
-          </div>
-          <div class="flex flex-col gap-2">
-            <h3 class="font-semibold text-xl">Personal Care & Hygiene</h3>
-            <p class="leading-[30px]">
-              We help with the personal care and hygiene of your family members.
-            </p>
-          </div>
-        </div>
-        <div
-          class="bg-white p-6 rounded-lg card flex flex-col items-start gap-10 w-full max-w-[410px]"
-        >
-          <div class="bg-primary p-2 rounded">
-            <img src="/svg/phone.svg" alt="chat" />
-          </div>
-          <div class="flex flex-col gap-2">
-            <h3 class="font-semibold text-xl">Personal Care & Hygiene</h3>
-            <p class="leading-[30px]">
-              We help with the personal care and hygiene of your family members.
-            </p>
-          </div>
-        </div>
-        <div
-          class="bg-grey p-6 rounded-lg flex flex-col items-start gap-10 w-full max-w-[410px]"
-        >
-          <div class="bg-primary p-2 rounded">
-            <img src="/svg/location.svg" alt="chat" />
-          </div>
-          <div class="flex flex-col gap-2">
-            <h3 class="font-semibold text-xl">Personal Care & Hygiene</h3>
-            <p class="leading-[30px]">
-              We help with the personal care and hygiene of your family members.
-            </p>
-          </div>
-        </div>
+      <div class="flex mt-10 w-full md:w-auto">
+        <nuxt-link
+          to="#contact"
+          class="py-4 px-6 bg-pink rounded-lg leading-none text-white w-full md:w-auto text-center"
+          >Get in touch
+        </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
-.card {
-  box-shadow: 0px 2px 72px 2px rgba(40, 13, 25, 0.08);
-}
-</style>
+<style scoped lang="scss"></style>
