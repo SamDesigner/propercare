@@ -1,11 +1,57 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { $gsap, $ScrollTrigger } = useNuxtApp();
+const fromLeft = ref(null);
+const mm = $gsap.matchMedia();
+const ctx = $gsap.context(() => {});
+onUnmounted(() => {
+  ctx.revert();
+});
+const animateFrom = () => {
+  const elem = document.querySelector(".from_left");
+  elem.style.transform = "translate(-300px, 0px)";
+  elem.style.opacity = "0";
+  $gsap.fromTo(
+    elem,
+    { x: -300, y: 0, autoAlpha: 0 },
+    {
+      duration: 1.25,
+      x: 0,
+      y: 0,
+      autoAlpha: 1,
+      ease: "expo",
+      overwrite: "auto",
+    }
+  );
+};
+
+const hide = () => {
+  const elem = document.querySelector('.from_left');
+  $gsap.set(elem, {autoAlpha: 0});
+}
+onMounted(() => {
+  setTimeout(() => {
+    console.log("mounted");
+    $ScrollTrigger.refresh();
+  }, 1000);
+  ctx.add(() => {
+    mm.add("(min-width: 1024px)", () => {});
+    hide();
+    $ScrollTrigger.create({
+      trigger: fromLeft.value,
+      start: `top+=100px bottom`,
+      markers: false,
+      onEnter: function() { animateFrom() },
+      onEnterBack: function() { animateFrom() },
+      onLeave: function() { hide() }
+    })
+  });
+});
+</script>
 <template>
   <div
     class="py-[40px] lg:py-[120px] px-4 md:px-0 mx-auto w-full max-w-[1320px]"
   >
-    <div
-      class="flex flex-col justify-between items-center w-full"
-    >
+    <div ref="fromLeft" class="from_left flex flex-col justify-between items-center w-full">
       <div class="gap-6 flex flex-wrap justify-center">
         <div
           class="bg-light-pink border border-pink-2 rounded-2xl px-6 py-10 flex flex-col items-start gap-10 w-full md:max-w-[384px]"
