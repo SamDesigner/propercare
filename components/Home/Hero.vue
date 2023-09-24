@@ -20,9 +20,9 @@ const open = ref(false);
             </div>
             <div v-if="open" class="border-t border-pink-2 mt-3 pt-3 flex justify-between">
               <nuxt-link to="/" class="text-pink-3">HOME</nuxt-link>
-              <nuxt-link to="/" class="text-pink-3">ABOUT</nuxt-link>
-              <nuxt-link to="/" class="text-pink-3">SERVICES</nuxt-link>
-              <nuxt-link to="/" class="text-pink-3">CONTACT</nuxt-link>
+              <nuxt-link to="#about" class="text-pink-3">ABOUT</nuxt-link>
+              <nuxt-link to="#services" class="text-pink-3">SERVICES</nuxt-link>
+              <nuxt-link to="#contact" class="text-pink-3">CONTACT</nuxt-link>
             </div>
           </div>
           <div class="flex justify-self-center flex-col mt-10 md:mt-20 w-full">

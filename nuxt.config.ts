@@ -7,10 +7,6 @@ export default defineNuxtConfig({
       title: "Proper4UCare",
       link: [
         { rel: "icon", type: "image/png", href: "/favicon.ico" },
-        {
-          rel: "stylesheet",
-          href: "https://cdnjs.cloudflare.com/ajax/libs/video.js/8.3.0/video-js.min.css",
-        },
       ],
       meta: [
         { charset: "utf-8" },
@@ -18,7 +14,7 @@ export default defineNuxtConfig({
         {
           name: "description",
           content:
-            "We are the best care givers, and winners of the 2020 caregiving visionary awards",
+            "At Proper Care, our team of dedicated professionals are committed to providing exceptional care that meets your unique needs.",
         },
       ],
       // script: [

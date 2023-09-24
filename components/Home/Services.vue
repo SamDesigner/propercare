@@ -101,6 +101,7 @@ onMounted(() => {
           >Get in touch
         </nuxt-link>
       </div>
+      <div id="about" />
     </div>
   </div>
 </template>

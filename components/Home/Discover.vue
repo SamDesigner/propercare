@@ -22,6 +22,7 @@
           >Get in touch
         </nuxt-link>
       </div>
+      <div id="contact" />
     </div>
   </div>
   </div>
