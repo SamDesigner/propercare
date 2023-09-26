@@ -5,17 +5,18 @@ const open = ref(false);
   <div class="bg-light-pink relative">
     <!-- <img class="absolute hidden lg:block top-0 left-0 w-[564px]" src="/img/ellipse.png" alt="ellipse"> -->
     <div class="pt-4 pb-16 mt-6 mx-auto w-full max-w-[1320px]">
-      <div class="flex flex-col px-4 md:px-0 justify-between lg:flex-row">
-        <div class="w-full text-primary max-w-[632px] md:px-4 xl:px-0 flex flex-col">
-          <div
-            class="w-full border border-pink-2 p-3 md:max-w-[432px] rounded-2xl backdrop-blur-[28px] bg-white"
+      <div class="flex flex-col px-4 md:px-0 justify-between items-center lg:flex-row">
+        <div class="w-full text-primary max-w-[632px] md:px-4 xl:px-0 flex flex-col items-center">
+          <!-- <div
+            class="w-full  border border-pink-2 p-3 md:max-w-[432px] rounded-2xl backdrop-blur-[28px] bg-white"
           >
             <div class="flex justify-between">
               <nuxt-link to="/">
                 <img class="w-[110px]" src="/svg/logo.svg" alt="logo" />
               </nuxt-link>
               <button ref="hamburger" @click="open = !open">
-                <Icon name="ic:round-menu" size="24px" color="#E15E99" />
+                <Icon v-if="open" name="mdi:close" size="24px" color="#E15E99" />
+                <Icon v-else name="ic:round-menu" size="24px" color="#E15E99" />
               </button>
             </div>
             <div v-if="open" class="border-t border-pink-2 mt-3 pt-3 flex justify-between">
@@ -24,8 +25,8 @@ const open = ref(false);
               <nuxt-link to="#services" class="text-pink-3">SERVICES</nuxt-link>
               <nuxt-link to="#contact" class="text-pink-3">CONTACT</nuxt-link>
             </div>
-          </div>
-          <div class="flex justify-self-center flex-col mt-10 md:mt-20 w-full">
+          </div> -->
+          <div class="flex justify-self-center flex-col w-full">
             <h1
               class="font-medium leading-snug capitalize lg:leading-[72px] text-[40px] lg:text-[56px]"
             >

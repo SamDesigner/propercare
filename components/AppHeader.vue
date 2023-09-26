@@ -1,12 +1,33 @@
 <template>
   <header
-    class="fixed right-0 left-0 text-black z-20"
-    :class="scrolled ? 'bg-light-pink header-shadow' : 'bg-transparent'"
+    class="fixed bg-transparent right-0 left-0 text-black z-20"
   >
     <div
-      class="flex h-24 md:h-[120px] items-center justify-between px-4 px-md-0 w-full max-w-[1320px] mx-auto"
+      class="flex pt-10 items-center justify-between px-4 md:px-0 w-full max-w-[1320px] mx-auto"
     >
-      <nuxt-link to="/">
+      <div
+        class="w-full border border-pink-2 p-3 md:max-w-[432px] rounded-2xl backdrop-blur-[28px] bg-white"
+      >
+        <div class="flex justify-between">
+          <nuxt-link to="/">
+            <img class="w-[110px]" src="/svg/logo.svg" alt="logo" />
+          </nuxt-link>
+          <button ref="hamburger" @click="open = !open">
+            <Icon v-if="open" name="mdi:close" size="24px" color="#E15E99" />
+            <Icon v-else name="ic:round-menu" size="24px" color="#E15E99" />
+          </button>
+        </div>
+        <div
+          v-if="open"
+          class="border-t border-pink-2 mt-3 pt-3 flex justify-between"
+        >
+          <nuxt-link to="/" class="text-pink-3">HOME</nuxt-link>
+          <nuxt-link to="#about" class="text-pink-3">ABOUT</nuxt-link>
+          <nuxt-link to="#services" class="text-pink-3">SERVICES</nuxt-link>
+          <nuxt-link to="#contact" class="text-pink-3">CONTACT</nuxt-link>
+        </div>
+      </div>
+      <!-- <nuxt-link to="/">
         <img class="w-[85px] md:w-[127px]" src="/img/logo.png" />
       </nuxt-link>
       <ul
@@ -24,12 +45,6 @@
         <li @click="open = !open">
           <nuxt-link to="/#services">Services</nuxt-link>
         </li>
-        <!-- <li @click="open = !open">
-            <nuxt-link to="#projects">Industries Served</nuxt-link>
-          </li>
-        <li @click="open = !open">
-          <nuxt-link to="#">Blog</nuxt-link>
-        </li> -->
       </ul>
       <button ref="hamburger" class="lg:hidden" @click="open = !open">
         <Icon name="ic:round-menu" size="24px" />
@@ -65,12 +80,6 @@
           <li @click="open = !open">
             <nuxt-link to="/#services">Services</nuxt-link>
           </li>
-          <!-- <li @click="open = !open">
-            <nuxt-link to="#projects">Industries Served</nuxt-link>
-          </li>
-          <li @click="open = !open">
-            <nuxt-link to="#">Blog</nuxt-link>
-          </li> -->
           <li @click="open = !open" class="mt-6 lg:mt-0">
             <nuxt-link
               to="#contact"
@@ -85,7 +94,7 @@
             </nuxt-link>
           </li>
         </ul>
-      </ul>
+      </ul> -->
     </div>
   </header>
 </template>
