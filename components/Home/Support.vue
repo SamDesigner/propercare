@@ -23,18 +23,18 @@
           is committed to providing compassionate and personalized care to
           ensure the well-being and comfort of our clients.
         </p>
-        <div class="flex flex-col lg:flex-row gap-6 mt-8 py-2 w-full">
+        <div class="flex flex-col flex-wrap lg:flex-row gap-6 mt-8 py-2 w-full">
           <div class="flex items-center gap-4 pr-8">
             <div class="p-[10px] bg-light-pink border rounded-xl border-pink-2">
               <img src="/svg/love-head.svg" alt="love head">
             </div>
-            <h3 class="text-lg md:text-xl">Experienced Caregivers</h3>
+            <h3 class="text-lg min-w-max md:text-xl">Experienced Caregivers</h3>
           </div>
           <div class="flex items-center gap-4 pr-8">
             <div class="p-[10px] bg-light-pink border rounded-xl border-pink-2">
               <img src="/svg/love-head.svg" alt="love head">
             </div>
-            <h3 class="text-lg md:text-xl">Personalized Approach</h3>
+            <h3 class="text-lg min-w-max md:text-xl">Personalized Approach</h3>
           </div>
         </div>
         <div class="flex mt-10 w-full md:w-auto">
