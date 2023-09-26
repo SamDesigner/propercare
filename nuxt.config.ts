@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: "Proper4UCare",
+      title: "ProperCare4U",
       link: [
         { rel: "icon", type: "image/png", href: "/favicon.ico" },
       ],
