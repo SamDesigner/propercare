@@ -1,7 +1,7 @@
 <template>
-    <div class="px-[16px] lg:px-[80px] py-[80px]">
+    <div class="max-w-[1320px] mx-auto px-[16px]  py-[80px]">
         <div class="">
-            <div class=" flex flex-col md:flex-row items-center gap-6 ">
+            <div class=" flex flex-col md:flex-row justify-between items-center gap-6 ">
                 <div class="md:w-[632px]  text-primary flex flex-col gap-[40px]">
                     <div>
                         <h1 class="text-[28px]  md:text-[40px] font-[500] leading-[44px] md:leading-[56px] ">Be Rest Assured Our Carers are The Best</h1>
