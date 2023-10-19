@@ -51,45 +51,45 @@ onMounted(() => {
   <div
     class="py-[40px] lg:py-[120px] px-4 md:px-0 mx-auto w-full max-w-[1320px]"
   >
-    <div ref="fromLeft" class="from_left flex flex-col justify-between items-center w-full">
+    <div ref="fromLeft" class="from_left flex flex-col justify-between items-center w-full gap-[40px]">
+      <div class="flex items-center justify-center">
+        <h1 class="text-primary text-[40px] font-[500] leading-[56px] text-center">Other Services We Provide</h1>
+      </div>
       <div class="gap-6 flex flex-wrap justify-center">
         <div
           class="bg-light-pink border border-pink-2 rounded-2xl px-6 py-10 flex flex-col items-start gap-10 w-full md:max-w-[384px]"
         >
-          <img class="w-16" src="/img/chat.png" alt="chat" />
+          <img class="w-16" src="/svg/1.svg" alt="chat" />
           <div class="flex flex-col gap-2">
-            <h3 class="font-medium text-[22px]">Personal Care & Hygiene</h3>
+            <h3 class="font-medium text-[22px]">Home Care</h3>
             <p class="leading-[30px]">
-              Our team of experienced caregivers provide personalized care plans
-              tailored to each individual's needs.
+              Our home care services are flexible and can be tailored to your individual needs, whether you need help with a few tasks each week or 24/7 care.
             </p>
           </div>
         </div>
         <div
           class="bg-light-pink border border-pink-2 rounded-2xl px-6 py-10 flex flex-col items-start gap-10 w-full md:max-w-[384px]"
         >
-          <img class="w-16" src="/img/message.png" alt="chat" />
+          <img class="w-16" src="/svg/2.svg" alt="chat" />
           <div class="flex flex-col gap-2">
             <h3 class="font-medium text-[22px]">
-              Reliable Service and 24/7 Support
+              Live in Care
             </h3>
             <p class="leading-[30px]">
-              We pride ourselves on providing reliable service and
-              round-the-clock support for our clients.
+              Our live-in carers are dedicated to providing you with the highest quality of care and support. They will work with you to develop a personalized care plan that meets your specific needs and preferences.
             </p>
           </div>
         </div>
         <div
           class="bg-light-pink border border-pink-2 rounded-2xl px-6 py-10 flex flex-col items-start gap-10 w-full md:max-w-[384px]"
         >
-          <img class="w-16" src="/img/send.png" alt="chat" />
+          <img class="w-16" src="/svg/3.svg" alt="chat" />
           <div class="flex flex-col gap-2">
             <h3 class="font-medium text-[22px]">
-              Manage your team with reports
+              Domicilliary care
             </h3>
             <p class="leading-[30px]">
-              We offer flexible scheduling options and affordable rates to
-              ensure our services meet your needs and budget.
+              Our domiciliary care team is made up of compassionate and experienced professionals who are dedicated to providing you with the highest quality of care.
             </p>
           </div>
         </div>

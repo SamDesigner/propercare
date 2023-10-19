@@ -4,6 +4,7 @@
     <HomeSupport />
     <HomeServices />
     <HomeQuality />
+    <HomeAssurance />
     <HomeTypes />
     <HomeDiscover />
     <!-- <HomeAbout /> -->
