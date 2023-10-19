@@ -53,7 +53,7 @@ onMounted(() => {
   >
     <div ref="fromLeft" class="from_left flex flex-col justify-between items-center w-full gap-[40px]">
       <div class="flex items-center justify-center">
-        <h1 class="text-primary text-[40px] font-[500] leading-[56px] text-center">Other Services We Provide</h1>
+        <h1 class="text-primary text-[28px]  md:text-[40px] font-[500] leading-[56px] text-center">Other Services We Provide</h1>
       </div>
       <div class="gap-6 flex flex-wrap justify-center">
         <div
